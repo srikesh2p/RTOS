@@ -1,0 +1,49 @@
+
+The Key take away of this section are, so ,you'll come to know about what exactly is Real time application, Real time operating system,
+
+then we will discuss some of the key differences between RTOS and GPOS in terms of Task Scheduling,Latency, Priority Inversion etc.
+
+Then, we will cover, what exactly is multitasking which is essential in the domain of real time operating system.
+
+1)what is Real Time Application"
+> First Let's see, what are the truths and myths related to the word of real time computing.
+The myth is the Real time computing is equivalent to fast computing. But, the truth is the Real time computing is equivalent to Predictable computing. The myth about Real time computing is, Real-Time computing means higher performance.The truth is in real time computing timeliness is more important than performance.
+
+> So, what exactly mean by the word Real time which is often used in the context of Real time application  or Real time operating system.
+So, word Real time signifies that, the application or the operating system deals with guarantees, not with raw speed.
+So, whenever we say something is Real time, then, the timeliness is more important, that is, it promises to meet its deadline for a given
+timeline instead of just talking about raw speed.
+
+> Application developers who think they need a Real time system for better performance of their application can actually get the performance they require by simply upgrading their hardware with the faster processors,RAM, high speed buses etc.That doesn't make a System Real time. A Real time system deals with guarantees, not with promises.
+
+> So, if an application with limited hardware, if it is able to meet a timeliness execution. Then, that system or application can be called as a real time. So, a real time system is one in which the correctness of the computations not only depends upon the logical correctness of the computation, but also upon the time at which the result is produced. If the timing constraints are not met, system failure is said to have occurred.
+
+> For example, take a look into the graph 1_RealTimeApplication.png. Here NRTA line indicates that it is a non real time application and the line RTA indicates a real time application. So, I have just plotted a graph of execution iterations versus response time. Here we can see, during multiple iterations the execution time or the response time of a real time application is almost constant. So, it is roughly taking around say 2.5 seconds for every duration. So, it's response time is fairly constant between multiple execution iterations.
+But take a look into the non-real time application. So, it's response time is varying. For the first iteration it took around 4 seconds, then for the next iteration it's response time was around 1.5 seconds and for the next iteration it took something around 2.5
+
+> So, the non-real time application a doesn't meet the timeliness behavior. So, you cannot trust this application isn't it?
+Because its response time is keep on varying between multiple iterations. So, a non real time application will show these kind of behavior. That its response time will always varying as time passes. So, but a non real time application promises a fairly constant response time,
+no matter in which constraint you execute that applications.
+
+> For example, one way of looking at this is a for non real time application here. You can speculate that the system load was high. So, it took more time. Here we can speculate that a system load may be less. So that's why, the non Real time application got executed in less time.
+And here you can predict that the system load was again high. So that's why, this application took more time. But a real time application no matter what the system load is. So, it will always take the same response time between multiple execution iterations. So, that's the meaning of real time, which is used in the context of a real time application or real time operating system.
+
+> So, What are real time applications?
+
+> In short they are called RTAs. So, real time applications are not fast executing applications.They need not be fast. But they have to meet the strict given response time deadline.
+
+> RTAs are time deterministic applications, that means, their response time to events is almost constant.
+
+> That could be small deviation in real time applications response time, in terms of milliseconds or seconds which will fall into the category of soft real-time applications.
+
+> Hard real time functions must complete within a given time limit. Failure to do so will result in absolute failure of the whole system.
+
+> So, For example, the air bag triggering mechanics in a car is an example of a Hard real time function. The airbag must be deployed within a given time limit of an impact. A response falling outside of this time limit can result in the driver sustaining injuries that could otherwise have been avoided.
+
+> Soft real time requirements are those that state time deadline, but breaching the deadline would not render the system useless. So, there could be a small deviation in terms of milliseconds or seconds, In terms of response time of a Soft real time requirements. So, they are not as strict as Hard real time systems. 
+> So, some more examples of real time applications are Missile guidance and control system. This is indeed a Hard real time system because, timeliness and response time is always strict and the deviation in the response time can cause chaos. So, all the control system requirements
+are usually Hard real time systems. And Anti Lock Breaking system in a car which is truly a Hard real time scenario and Airbag deployment in a four wheeler also can be considered as a Hard real time applications.Because the timeliness the response time from detecting a crash to the deployment of an airbag is very  very important. So, airbag deployment can be considered as a hard real time application.
+
+> Whereas the VOIP, that is Voice Over Internet can be considered as a Soft real time. Because, during communication even there could be always a delay while transmitting packets, because there a Hard real time scenario cannot be maintained. And there could be a dropping of a couple of packets. So, all these missing deadlines and dropping of packets cannot be perceived by the user, sometimes the user will not able to notice it.
+
+> So, VOIP can be considered as a Soft real time systems. Other than this Aircraft Control, ATMs, Robotics, MRI and there are hundred thousands of other applications where real time applications play an important role.
