@@ -1,8 +1,6 @@
 
 The Key take away of this section are, so ,you'll come to know about what exactly is Real time application, Real time operating system,
-
 then we will discuss some of the key differences between RTOS and GPOS in terms of Task Scheduling,Latency, Priority Inversion etc.
-
 Then, we will cover, what exactly is multitasking which is essential in the domain of real time operating system.
 
 1)what is Real Time Application"

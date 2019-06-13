@@ -1,0 +1,43 @@
+Now, let's differentiate the real time operating system and the general purpose operating system in terms
+of task scheduling
+. 
+GPOS-Task scheduling:
+GPOS is programmed to handle scheduling in such a way that it manages to achieve
+high throughput. 
+Throughput means-the total number of processes that complete their execution per unit time.
+
+Sometimes execution of high priority process will get delayed in order to serve 5 or 6 low priority
+task. High throughput is achieved by serving 5 lower priority tasks than by serving a single high priority
+one.
+
+So, if 5 or 6 low priority tasks are waiting to run, so then it will delay the high priority task
+and it will allow the lower priority task to run because, in order to maintain the higher throughput.
+
+So, In a GPOS, the scheduler typically uses a fairness policy to dispatch threads and processes onto the
+CPU.
+
+Such a policy enables the high over all throughput required by desktop and server applications no problem. But
+offers no guarantees that high priority, time critical threads or processes will execute in preference to
+lower-priority threads.
+
+On the other hand in RTOS, Threads execute in the order of their priority.If a high-priority thread
+becomes ready to run,it will take over the CPU from any lower-priority thread that may be executing .
+
+Here a high priority thread gets executed over the low priority ones. All "low priority thread execution" will get paused.
+A high priority thread execution will get override only if a request comes from an even higher priority threads.
+
+So, Does that mean, real time operating systems are very poor in delivering throughput?
+
+The fact is a real time operating systems may yield less throughput than the general purpose OS, because it always
+favors the high priority task to execute first, but that doesn't mean, it has a very poor throughput!
+
+Because, these two operating systems that is GPOS and real time operating systems are used entirely in different scenarios.
+The GPOS is always loaded with heavy processes and more processes. But a real time operating systems
+most of the time is loaded with less number of tasks. So,a throughput is actually relative to the load of
+the system. 
+
+A Quality RTOS will still deliver decent overall throughput but can sacrifice throughput for being deterministic
+or to achieve predictability.
+
+So to a RTOS, achieving perfectibility or time deterministic nature is more important than throughput,
+but for the GPOS achieving higher throughput for user convenience is more important.

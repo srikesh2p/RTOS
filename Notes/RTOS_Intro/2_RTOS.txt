@@ -1,0 +1,39 @@
+In the previous lecture we understood about what is a real time application.
+We understood that, a real time application is Time Deterministic.
+That means, it's response time to events is always almost constant.
+You can always trust that application in terms of its timings in responding to events. But, How to run the realtime application?
+
+You cannot take a real time application and run it on general purpose OS like windows or Linux. Because, they will never help you to meet strict timing requirements.
+
+So, what you need is a real time operating system, that is so customized to meet the real time applications
+timing requirements.So, a real time operating system promises application to meet that timing requirements.
+
+So, what is a Real Time OS?
+
+It's a OS, of course specially designed to run applications with very precise timing and high degree of reliability. 
+
+To be considered as "real-time", an operating system must have a known maximum time for each of the critical operations that it performs.
+Some of the operations may include
+> handling of interrupts and internal systems exception.Unlike general purpose OS in RTOS the interrupt latency is kept very minimal as possible> Handling of critical section code. In real time operating system, You don't find huge critical section code segments where the interrupts of the system is turned off.
+> And scheduling, unlike the general purpose OS the scheduling mechanism in RTOS is simple and always favors the high priority tasks.
+
+
+Now let's see, what are the important differences between a real time operating system and a general purpose operating system.
+The examples of GPOS are you may already know this,
+
+> All you desktop operating systems are for general purpose use case. The well-known operating systems
+like Linux, windows, the Mac OS, the iOS and Android.Famously used for tablets and mobile phones are all fall into the category of GPOS. 
+
+>And some of the examples of real time operating systems are the VxWorks real time operating system. The VxWorks is basically from the company called Windriver, which is acquired by a Intel around maybe 10 years ago and it is widely used in the field of safety, security,
+IOT etc.. The VxWorks is a proprietary software and you need to have a license to use that in your applications. So, this is one of the most famous a real time operating system used for embedded applications.
+
+And the next one is QNX Neutrino by the company called QNX.This real time operating system is majorly used in Industrial automation applications, medical and also in robotics.
+
+And the next one is Free RTOS.The Free RTOS is from Free RTOS.org. This is also on of the famous real time operating system among developers.
+Free RTOS comes with two flavors. One is called Open RTOS and another one is Safe RTOS. We will discuss more about these flavors later in this course. We will be using Free RTOS in this course, which is absolutely free to download And also it is royalty free.
+
+The next one is Integrity. This is from Green Hills software majorly used for security and safety related applications. So, these are some of the most commonly used real time operating systems.
+
+Strictly speaking the mobile operating systems like Android and iOS may not fall into the category of pure general purpose OS.
+You can consider them in the category of Embedded OS. So, all the real time operating system I just discussed
+will fall into the category of Embedded real time operating system
