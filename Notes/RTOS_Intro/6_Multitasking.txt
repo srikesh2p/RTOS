@@ -1,0 +1,49 @@
+Let me first give you an analogy of Multitasking.
+
+Let's consider your typical day, you have got 24 hours and you try to accomplish various tasks. So, like eat your
+break fast, replying to your emails, taking the phone call, taking notes, attending appointments, sleeping
+etc.. So your day consists of various task and you try to accomplish as much as possible to keep your
+day more productive.
+
+So, how do you accomplish all these tasks.
+So, one way is you will give a Time slice for each activity right.
+Let's say 20 minutes of time slice for eating your break fast, 20 minutes for writing emails etc.. And
+the other way is you can upload the work to your Assistance to increase your productivity, right?
+
+Similarly in multitask able computing, an application may consist of multiple tasks. Each task is supposed
+to carry out to one unique functionality.
+So, let's say there is an application called temperature monitor system and this application has got
+3 unique task. Task1 sensor data reading, Task2 updates the display,
+And let's say Task 3 processes the user inputs like button press etc..
+
+So, this application implements multiple task, isn't it?
+A Task means, just think like a piece of code which can run on CPU and execute.
+So now, you have got one CPU and you have to run all these tasks.
+
+So, how do you run it?
+One way is give a small time slice for each task to run.
+Let's say, after time slice 1 remove the Task1 and make Task2 to run and so on.
+So, to do this you need a scheduler. A scheduler is one who takes care of scheduling all this task
+onto the CPU to execute.
+So, in a multitasking scenario a scheduler also plays an important role. See fig 6_multitasking.png
+
+Now another way to run all this task is to use a multi-core processor.
+Let's say, you have a processor with 4 core.
+In this case, you don't need a scheduler to run this application, isn't it?
+Why?
+Because, it has got four cores and each core can execute one task.
+So, all these 3 task can execute simultaneously.
+
+But in embedded world we don't usually use a processor which has got multiple cores.
+We usually will have one core and multiple task scenario.
+So, to run all these task you will need a scheduler and scheduler will decide which tasks should take the
+CPU next.
+
+So, this is how multiple tasks execute on the CPU, which gives the illusion for you that all the
+task are executing simultaneously. See fig 6_multitasking_illusion.png 
+For example, in your desktop you typically work with lots of softwares
+simultaneously, isn't it?
+Like you browse the Internet, you listen to music,
+you edit your code using editor application, you use calculators etc...
+So, all these applications will have the respective task are processes which share the CPU. But
+your OS is designed such a way that, it gives you the feeling that all the applications are running simultaneously.

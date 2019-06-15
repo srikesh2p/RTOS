@@ -1,0 +1,39 @@
+Now, let's see the difference between a real time operating system and a general purpose operating system,
+in terms of Task Switching Latency.
+
+In computing, Latency means "The time that elapses between the stimulus and the response to it". Task switching latency means, that time gap between "A triggering of an event and the time at which the task which takes care of that event is allowed to run on the CPU".
+
+Take example of this scenario. Let's say at t1 a event is triggered or occurred. That could be a Crash detection. And at t2, task which handles that crash detection like Airbag deployment task is made to run on the CPU. See fig 4_latency.png So, this time gap(time gap b/w t1 & t2) is called a Task switching latency. In the case of RTOS this latency is always fine tuned and bounded.
+
+The real time operating systems always helps you to designs such types of system where this gap must be a deterministic or time bounded,
+no matter when this event occurs this gap always remain almost constant.
+
+But, this is not the case of general purpose operating system where this gap varies as time elapses or the system load increases.
+
+Take a look into this graph 4_task_switch_latency.png, as the number of tasks that get scheduled increases the switching latency for a task, a increases in the case of for general purpose operating system. But in the case of RTOS, it remains almost constant.
+In the case of general purpose operating system, when more number of threads are processes to schedule latency will get added up.
+
+Now, let's discuss about differences between RTOS and the GPOS in terms of interrupt latency. Interrupt latency
+is the time gap between the time at which interrupt triggers and the time at which ISR is started executing on the CPU.
+Let's say, task one is running on CPU and at time t1 interrupt occurs.
+If it's a higher priority, then it will preempt this task and ISR will begin to execute.
+So, this time gap between t1 and t2 is called interrupt latency. This interrupt latency is an important
+parameter to service the critical events.
+
+For example, in our Airbag deployment application this gap must be in terms of microseconds or nanoseconds.
+So, interrupt latency is an important characteristic of the RTOS and RTOS should be having this latency
+as minimal as possible. And GPOS this time gap varies as system load increases and it is unbounded. 
+
+When the ISR finishes,
+now it has to make a switch to higher priority task which is ready in the system,isn't it?
+So, when it finishes here either old task can resume which got interrupted due to ISR.
+Only if it is the highest priority ready task.Or it may switch to some other task which is higher priority
+at this time. So, the time gap between the moment at which ISR or task leave the CPU and the time at which
+new task switching in into the CPU is called scheduling latency. In this time gap various activities take place like saving the
+context of an old task and retrieving that context of the new task, which we call context switching.
+And for a real time application this scheduling latency must be very narrow.
+
+So, this time gap must be very small as possible and that is one of the characteristic of the real time
+operating system.
+
+

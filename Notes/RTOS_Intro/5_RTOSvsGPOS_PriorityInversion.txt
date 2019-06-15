@@ -1,0 +1,61 @@
+Now, let's discuss about the difference between RTOS and GPOS in terms of priority inversion.
+Let's say you are going out with your car and we will assume you are car as a lower priority vehicle,
+enters the busy traffic intersection and you may be thinking that you can easily cross the intersection.
+Now, let's see unfortunately all these vehicles come to a sudden stop and you are struck right in the
+middle of the intersection of the roads.
+Suddenly, you here the siren of an ambulance which is heading to a hospital over this line. The ambulance
+is of course a higher priority vehicle, isn't it?
+
+Now, It cannot cross this intersection because unfortunately you cannot move, that is you are struck right now.
+So, the ambulance now has to wait until you move out of its way.
+That means, a higher priority vehicle is waiting for lower priority vehicle to exit.
+That is exactly what priority inversion is the higher priority vehicle behaving like it is a lower
+priority and a lower priority vehicle is behaving like a higher priority.
+So, this is the case of priority inversion.
+
+Now, let's apply this into computing word.
+Let's say, your car is lower priority task, and these taxis are medium priority, and this ambulance is
+higher priority task. And this intersection area is a shared resource. Because this is common for both
+the roads, isn't it?
+
+Now, let's say lower priority task has acquired the key to access this shared area.But it is not allowed to run on
+the CPU because, lots of medium priority tasks are running on the CPU which won't allow lower priority task
+to take the CPU.
+
+Now, when the higher priority task enters it cannot access this shared area, isn't it?
+Because, key is taken by the lower priority task. But lower priority task is not allowed to run.
+It can only give up the key once it is allowed to run, isn't it?
+So, until the lower priority task runs key will be locked for this shared resource and higher priority
+task cannot access it.
+
+So, the higher priority task has to wait until lower priority task releases the key, causing the in
+version in priority.
+
+In GPOS, this is not at all a major issue.So,
+but in RTOS, it will definitely lead to issues because, you are blocking the higher priority task to execute.
+But most of real time kernel a use some techniques to solve this issue.
+So, RTOS can create paths on the fly which allows the higher priority tasks to by pass a lower priority
+task,or that we call as rescheduling or there
+could be other techniques like temporarily making, this as a higher priority task and this as a lower priority
+task,so that giving chance for the lowest priority task to run and release the key.
+
+So, all these techniques RTOS uses to at least to minimize the priority inversion problem. So, priority
+inversion is not at all a problem in general purpose OS. But this will surely cause a problem in real time operating
+system.
+
+So, what are the features that a RTOS has got but a GPOS Doesn't?
+> The first point I would like to mention is the real time operating system has got the Priority based Preemptive scheduling.
+That means, it always favors the highest priority task in the system.
+All right. But a GPOS cannot act like this, if it does than it will kill the throughput of the system.
+So, GPOS usually go for those scheduling techniques which increase the throughput of the system.
+
+> And the next point is you will not find a very long Critical section code segments where the interrupt as
+well as the preemption of the system is disabled, in order to protect the critical section.
+But, in the case of GPOS this may not be the case. 
+
+> And in RTOS avoiding of priority inversion is a must. Otherwise that may lead to the failure of the system.
+But in the case of GPOS priority inversion problem doesn't add significant problem. 
+
+> And RTOS always has bounded interrupt latency as well as bounded scheduling latency. But in the case of the GPOS the interrupt
+latency and task scheduling latency may vary significantly due to complexity of the system as well as
+due to the increase in System load as time elapses.
